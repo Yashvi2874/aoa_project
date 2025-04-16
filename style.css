@@ -1,0 +1,82 @@
+body {
+  font-family: 'Times New Roman', Times, serif;
+  background: linear-gradient(to right, #371e03, #6f370f, #5a270f);  /* Coffee shades */
+  margin: 0;
+  padding: 20px;
+  color: #f5e6cc;  /* Creamy text */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+h1 {
+  text-align: center;
+  color: #f5e6cc;  /* Cream */
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.controls button {
+  padding: 12px 24px;
+  background-color: #e6d9bb;  /* Rich coffee brown */
+  color: #000000;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.controls button:hover {
+  background-color: #d8c9a6;
+  transform: scale(1.05);
+}
+
+#status {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #f5e6cc;
+}
+
+svg {
+  display: block;
+  margin: auto;
+  background: #fff8e7;   /* Creamy background for contrast */
+  border: 5px solid #271105;  /* Medium brown border */
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Bar plot styling */
+.bar {
+  fill: #c49e70;  /* Light coffee/tan */
+  transition: fill 0.3s;
+  /* Note: For rounded corners on SVG rects, use rx and ry attributes in D3 code */
+}
+
+.bar.current {
+  fill: #a67c52;  /* Medium brown */
+}
+
+.bar.min {
+  fill: #8b4513;  /* Darker, rich brown */
+}
+
+.bar.sorted {
+  fill: #582609;  /* Burly Wood, a light, warm tan */
+}
