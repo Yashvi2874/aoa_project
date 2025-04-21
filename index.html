@@ -2,20 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Selection Sort Visual Simulator </title>
+  <title>Selection Sort Visual Simulator</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://d3js.org/d3.v6.min.js"></script>
 </head>
 <body>
-  <h1>Selection Sort Visual Simulator 📊
-  </h1>
+  <h1>Selection Sort Visual Simulator 📊</h1>
+  
   <div class="controls">
+    <div class="slider-control">
+      <label for="arraySize">Array Size:</label>
+      <input id="arraySize" type="number" min="5" max="100" value="20">
+    </div>
     <button onclick="generateArray()">🔄 Generate New Array</button>
     <button onclick="selectionSort()">▶️ Run Selection Sort</button>
-    <button onclick="stopSort()" id="stopBtn">⛔ Stop</button>
+    <button id="stopButton" onclick="stopOrResumeSort()">⛔ Stop</button>
+    <div class="theme-toggle" title="Toggle Dark Mode">
+      <label class="switch">
+        <input type="checkbox" id="themeSwitch">
+        <span class="slider">
+          <span class="icon sun">☀️</span>
+          <span class="icon moon">🌙</span>
+        </span>
+      </label>
+    </div>
+    
+
+    <div class="slider-control">
+      <label for="speedControl">Speed(ms):</label>
+      <div class="slider-wrapper">
+        <input id="speedControl" type="range" min="100" max="2000" step="100" value="500">
+        <div id="currentSpeed" class="current-speed">500</div>
+      </div>
+    </div>
+
+    <div class="slider-control" id="rewindWrapper" style="display: none;">
+      <label for="rewindControl">Rewind:</label>
+      <input id="rewindControl" type="range" min="0" max="0" step="1" disabled>
+    </div>
   </div>
-  <div id="status">Array ready. Click "Run Selection Sort" to start.</div>
+
   <svg id="chart" width="900" height="400"></svg>
+  <div id="metrics">🔁 Swaps: 0 | ⏱️ Time: 0.00s</div>
+  <div id="status">Array ready. Click "Run Selection Sort" to start.</div>
   <script src="script.js"></script>
 </body>
 </html>
